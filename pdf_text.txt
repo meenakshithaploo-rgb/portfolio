@@ -1,0 +1,217 @@
+Page 1:
+Attacks Can't Be Prevented, but They Can Be Contained
+MY ROLE
+Design Head , responsible for Design Strategy and 
+delivery— discovery, user research, design, UI 
+development ,  UI testing
+UI/ UX TEAM
+4 UX Designers
+1 Visual Designer   
+2 UI developers
+ENGINEERING TEAM – Front end development 
+6 Full stack Developers 
+3 Testing leads 
++
+Stealth has over 13 Agile teams mostly Scrum and some 
+Kanban
+PM Team
+4 Product Owners 
+2 Product Managers 
+Stealth(core) is a key product under the Unisys Stealth suite of products, 
+which provides identity-based micro-segmentation to transform your existing 
+network into a Zero Trust network, where environments include on-premises and 
+hybrid cloud and end points include IoT devices and containers, data in transit, 
+and so on.
+What can you do with Stealth?
+Know your network
+  Visualize, model, and design informed security
+Cloak critical assets 
+  Cryptographically hide critical assets from adversaries
+Easy micro-segmentation
+  Isolate assets, regardless of environment, network, or device
+Enable adaptive security
+  Integrate existing security tools to correlate, detect, and respond
+CASE STUDY 1 – Stealth(core)  
+
+
+---
+
+Page 2:
+PROBLEM
+Even during the pandemic year, the number of cyber-attacks and breaches 
+increased across the globe, including India. The nature of breaches has 
+changed in the recent years, leading to a change of focus from the 
+perimeter to threats inside the network. The Zero Trust model has gained 
+prominence in terms of approach to Security, knowing that the perimeter is 
+dead. 
+The journey to incorporate and implement a Zero Trust model requires a 
+paradigm change and a journey involving the right tools and technologies.
+▪
+The threat environment is now everywhere. 
+▪
+Digitization of businesses has increased the security risk of enterprise 
+assets.
+▪
+Traditional solutions are being challenged due to technological 
+evolution.
+DESIGN PROBLEM:
+Simplifying End User Deployment and Access
+During the go-market for Stealth(core) , we received a muted feedback 
+from our sales folks to the tune of  - “Does our application lack a wow factor”
+With years of investment in the traditional fort and moat 
+approach, focusing on the perimeter, the adoption of Zero Trust 
+requires a paradigm shift, and a well-planned journey. The need 
+is to
+Simplify the journey towards Zero Trust without disrupting 
+existing models.
+Bring in efficiency and speed to recognize and tackle threats.
+CASE STUDY 1 – Stealth(core)  
+OPPORTUNITY
+
+
+---
+
+Page 3:
+New UI/UX features for Stealth 6.0:
+▪
+the new Stealth Security Dashboards developed 
+with Grafana
+▪
+new Stealth configuration wizards
+▪
+new Stealth modeling canvas design and look & feel
+▪
+the new Dark and Light Modes
+▪
+the new processing icons with AI messaging along 
+with success toaster popups
+CASE STUDY 1 – Stealth(core)  
+SCOPE
+Duration : 5 months to GA 
+User Research and Review 
+UX and Visual Design 
+UI Development 
+UI Testing  
+MY INVOLVEMENT 
+This 5 -months project was split into initial research, 
+strategy and envisioning phase followed by Agile-based 
+product rollout.
+As a Design Lead on this project, my role started at the 
+design effort scoping stage where I worked closely with 
+business and engineering stakeholders to advise and 
+define the user-centered design approach and identify 
+desired business outcomes.
+During the execution phase, I worked closely with 
+researchers, I provided design direction to the design 
+team through the analysis and design phase. 
+I led key design presentations to business and 
+engineering stakeholders.
+As design lead, I directly managed the design team, set 
+design direction and guide design team throughout the 
+process while meeting the product development 
+timelines.
+IMPLEMENTATION 
+
+
+---
+
+Page 4:
+A Design Driven Approach to Problem Solving
+CASE STUDY 1 – Stealth(core)  
+
+
+---
+
+Page 5:
+CASE STUDY 1 – Stealth(core)  
+A Design Driven Approach to Problem Solving
+
+
+---
+
+Page 6:
+CASE STUDY 1 – Stealth(core)  
+User Experience – Entities and Process
+
+
+---
+
+Page 7:
+CASE STUDY 1 – Stealth(core)  
+User Experience – Entities and Process
+
+
+---
+
+Page 8:
+CASE STUDY 1 – Stealth(core)  
+User Experience – Entities and Process
+
+
+---
+
+Page 9:
+CASE STUDY 1 – Stealth(core)  
+User Experience – Entities and Process
+
+
+---
+
+Page 10:
+Results 
+6.0 Release Mockups
+600+
+WIREFRAMES 
+80+
+HI- FIDILITY SCREENS 
+4
+MONTHS 
+6
+MEMBERS
+
+
+---
+
+Page 11:
+Stealth Canvas – 5.0  
+CASE STUDY 1 – Stealth(core)  
+Main Canvas Light theme
+Stealth Canvas – 6.0  
+
+
+---
+
+Page 12:
+CASE STUDY 1 – Stealth(core)  
+Mode Switcher Dark theme
+Mode Switcher Light theme
+
+
+---
+
+Page 13:
+CASE STUDY 1 – Stealth(core)  
+Identity Management Server Light theme
+Import Processing Light theme
+
+
+---
+
+Page 14:
+CASE STUDY 1 – Stealth(core)  
+
+
+---
+
+Page 15:
+BUSINESS IMPACT 
+Stealth Security Dashboard (SSD) with lots of new widgets which provides CISO and Admins real time insights to key security metrics
+New Stealth leapfrogs us over competition in terms of look and feel of the product and adds the sizzle to already best in the class security 
+hardening capabilities
+Reduces the time to install and configure the management plane from 4 hours to 30 mins
+Forrester’s Q3 2020 evaluation of providers of Zero Trust eXtended (ZTX) ecosystems rated Unisys as a “Strong Performer” based on 19 
+specific criteria. 
+4 major client wins in last 3 months 
+2 Design and UI development partnerships established – 1  USA and 1 India 
+Winner of Aegis Graham Bell Awards 2021 – Innovation in Cybersecurity 
+CASE STUDY 1 – Stealth(core)  
