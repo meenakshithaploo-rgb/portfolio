@@ -104,24 +104,20 @@
 .discovery-row-bottom {
     border-top: 1px solid hsl(var(--border));
 }
-.discovery-connectors {
+.discovery-stage-row {
     display: none;
-    align-items: center;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
     margin-bottom: 0.75rem;
 }
-.discovery-connectors .label {
+.discovery-stage-row .stage {
+    padding-bottom: 0.5rem;
+    border-bottom: 1px dotted hsl(var(--foreground) / 0.35);
     font-size: 11px;
     font-weight: 600;
     letter-spacing: 0.03em;
     text-transform: uppercase;
     color: hsl(var(--foreground));
-    white-space: nowrap;
-}
-.discovery-connectors .dots {
-    flex: 1 1 auto;
-    height: 0;
-    margin: 0 0.5rem;
-    border-top: 1px dotted hsl(var(--foreground) / 0.35);
 }
 .discovery-stage-label {
     font-size: 11px;
@@ -164,8 +160,11 @@
     .discovery-row-bottom {
         grid-template-columns: 3fr 2fr;
     }
-    .discovery-connectors {
-        display: flex;
+}
+@media (min-width: 640px) {
+    .discovery-stage-row {
+        display: grid;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
     }
     .discovery-stage-label {
         display: none;
@@ -450,12 +449,12 @@ As the Design Lead and Sprint Lead on Cisco Secure Firewall, I connected directl
                       <h3 class="type-ui text-base font-semibold text-foreground">Week Design Sprint</h3>
                     </div>
 
-                    <div class="discovery-connectors">
-                      <span class="label">Discover</span><span class="dots"></span>
-                      <span class="label">Define</span><span class="dots"></span>
-                      <span class="label">Design</span><span class="dots"></span>
-                      <span class="label">Story Visualization</span><span class="dots"></span>
-                      <span class="label">Readout</span>
+                    <div class="discovery-stage-row">
+                      <div class="stage">Discover</div>
+                      <div class="stage">Define</div>
+                      <div class="stage">Design</div>
+                      <div class="stage">Story Visualization</div>
+                      <div class="stage">Readout</div>
                     </div>
 
                     <div class="grid grid-cols-2 sm:grid-cols-5 gap-4">
