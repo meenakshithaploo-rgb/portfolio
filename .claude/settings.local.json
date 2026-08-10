@@ -8,7 +8,12 @@
       "Bash(python3 -c ' *)",
       "Bash(mkdir -p alex_illustrations)",
       "Bash(python3 -c \"from PIL import Image; print\\('ok'\\)\")",
-      "Bash(SRC=\"/private/tmp/claude-501/-Users-meenakshithaploo-Documents-Meenakshi-Portfolio--Meenakshi/e724f948-af39-457c-9c7f-06f4c17f3614/scratchpad/alex_illustrations\" *)"
+      "Bash(SRC=\"/private/tmp/claude-501/-Users-meenakshithaploo-Documents-Meenakshi-Portfolio--Meenakshi/e724f948-af39-457c-9c7f-06f4c17f3614/scratchpad/alex_illustrations\" *)",
+      "Bash(SRC=\"/Users/meenakshithaploo/Documents/Meenakshi-Portfolio /Meenakshi\" *)",
+      "Bash(find /private/tmp/claude-501 -newer \"/Users/meenakshithaploo/Documents/Meenakshi-Portfolio /Meenakshi/work-01-01.html\" -iname \"*.png\" -o -newer \"/Users/meenakshithaploo/Documents/Meenakshi-Portfolio /Meenakshi/work-01-01.html\" -iname \"*.jpg\" 2>/dev/null | grep -v alex_illustrations | head -30)",
+      "Bash(find /tmp /private/tmp -maxdepth 4 \\\\\\( -iname \"*.png\" -o -iname \"*.jpg\" -o -iname \"*.jpeg\" \\\\\\) -mmin -30 2>/dev/null | grep -vi alex_illustrations | head -30)",
+      "Bash(xargs -I{} sh -c 'echo \"{} $\\(stat -f \"%Sm\" -t \"%Y-%m-%d %H:%M\" \"{}\"\\)\"')",
+      "Bash(sort -k2)"
     ]
   }
 }
