@@ -18,7 +18,9 @@
       "Bash(grep -o \".\\\\{0,5\\\\}mb-8.\\\\{0,20\\\\}\" media/css/style.css)",
       "Bash(grep -o \".\\\\{0,5\\\\}mb-4.\\\\{0,20\\\\}\" media/css/style.css)",
       "Bash(grep -o \"bg-accent.\\\\{0,6\\\\}\" media/css/style.css)",
-      "Bash(grep -o \"aspect-\\\\\\\\\\\\\\\\\\\\[4.\\\\{0,15\\\\}\" media/css/style.css)"
+      "Bash(grep -o \"aspect-\\\\\\\\\\\\\\\\\\\\[4.\\\\{0,15\\\\}\" media/css/style.css)",
+      "Bash(mkdir -p goat_slides)",
+      "Bash(SRC=\"/private/tmp/claude-501/-Users-meenakshithaploo-Documents-Meenakshi-Portfolio--Meenakshi/e724f948-af39-457c-9c7f-06f4c17f3614/scratchpad/goat_slides\" *)"
     ]
   }
 }

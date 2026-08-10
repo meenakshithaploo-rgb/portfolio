@@ -170,6 +170,95 @@
         display: none;
     }
 }
+
+/* Results carousel */
+.carousel {
+    position: relative;
+    border-radius: 1rem;
+    overflow: hidden;
+    border: 1px solid hsl(var(--border));
+    background-color: hsl(var(--surface));
+    aspect-ratio: 16 / 9;
+}
+.carousel-slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .3s ease;
+}
+.carousel-slide.is-active {
+    opacity: 1;
+    visibility: visible;
+}
+.carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 9999px;
+    background: hsl(var(--background) / .85);
+    border: 1px solid hsl(var(--border));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: hsl(var(--foreground));
+    z-index: 5;
+    font-size: 1.1rem;
+    line-height: 1;
+    padding: 0;
+}
+.carousel-btn:hover {
+    background: hsl(var(--surface));
+}
+.carousel-btn-prev { left: .75rem; }
+.carousel-btn-next { right: .75rem; }
+.carousel-counter {
+    position: absolute;
+    top: .75rem;
+    right: .75rem;
+    z-index: 5;
+    background: hsl(var(--background) / .85);
+    border: 1px solid hsl(var(--border));
+    color: hsl(var(--foreground));
+    font-size: 11px;
+    font-weight: 600;
+    padding: .2rem .55rem;
+    border-radius: 9999px;
+}
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: .4rem;
+    margin-top: .85rem;
+}
+.carousel-dot {
+    width: .4rem;
+    height: .4rem;
+    border-radius: 9999px;
+    background: hsl(var(--border));
+    cursor: pointer;
+    border: none;
+    padding: 0;
+    transition: width .2s ease, background .2s ease;
+}
+.carousel-dot.is-active {
+    background: hsl(var(--accent));
+    width: 1.1rem;
+}
+.carousel-caption {
+    margin-top: .85rem;
+    font-size: 1rem;
+    color: hsl(var(--muted-foreground));
+}
 </style>
 </head>
   <body class="min-h-screen bg-background text-foreground">
@@ -666,23 +755,96 @@ As the Design Lead and Sprint Lead on Cisco Secure Firewall, I connected directl
             <section class="mt-16">
               <h2 class="type-section-heading mb-6">Results & New Experience</h2>
               <p class="type-body mb-8">
-                We translated the vision into high-fidelity designs targeting quick wins and long-term architectural improvements. Here are key highlights of the new experience:
+                We translated the vision into high-fidelity designs targeting quick wins and long-term architectural improvements, across the three P1&ndash;P3 phases: Day 0, Guided Troubleshooting, and the Actionable Dashboard. Step through each flow below.
               </p>
 
-              <div class="mb-12">
+              <div class="mb-14">
                 <h3 class="type-ui text-lg mb-3">Simplifying Day 0 Experience</h3>
                 <p class="type-body mb-6">We introduced a guided, step-by-step out-of-the-box experience to help admins confidently set up typical policies and get their firewall running quickly.</p>
-                <div class="rounded-2xl border border-border overflow-hidden bg-surface aspect-[16/9] relative">
-                  <img src="./media/work-01-01/day-0-experience.png" alt="Guided Day 0 setup experience" class="object-cover absolute inset-0 size-full" />
+                <div class="carousel" data-carousel>
+                  <div class="carousel-slide is-active" data-caption="Update and install &mdash; the guided flow starts before the admin ever sees an empty console.">
+                    <img src="./media/work-01-01/day0-00-install.jpg" alt="Firewall Manager update and install progress screen" />
+                  </div>
+                  <div class="carousel-slide" data-caption="Get Your Device Up and Running &mdash; configure networking, then onboard devices: two clear steps instead of a blank console.">
+                    <img src="./media/work-01-01/day0-01-setup.jpg" alt="Get Your Device Up and Running: configure networking, then onboard devices" />
+                  </div>
+                  <div class="carousel-slide" data-caption="Device Management &mdash; onboarding status is visible and actionable from the first screen.">
+                    <img src="./media/work-01-01/day0-03-devices.jpg" alt="Device Management view showing onboarding status" />
+                  </div>
+                  <div class="carousel-slide" data-caption="Firewall Enhancement Checklist &mdash; guided next steps replace guesswork on what to configure next.">
+                    <img src="./media/work-01-01/day0-02-checklist.jpg" alt="Firewall Enhancement Checklist guiding next configuration steps" />
+                  </div>
+                  <button type="button" class="carousel-btn carousel-btn-prev" aria-label="Previous slide">&larr;</button>
+                  <button type="button" class="carousel-btn carousel-btn-next" aria-label="Next slide">&rarr;</button>
+                  <div class="carousel-counter"><span class="carousel-counter-current">1</span>/4</div>
                 </div>
+                <div class="carousel-dots" data-carousel-dots>
+                  <button type="button" class="carousel-dot is-active" aria-label="Slide 1"></button>
+                  <button type="button" class="carousel-dot" aria-label="Slide 2"></button>
+                  <button type="button" class="carousel-dot" aria-label="Slide 3"></button>
+                  <button type="button" class="carousel-dot" aria-label="Slide 4"></button>
+                </div>
+                <p class="carousel-caption" data-carousel-caption>
+                  Update and install &mdash; the guided flow starts before the admin ever sees an empty console.
+                </p>
               </div>
 
-              <div class="mb-12">
+              <div class="mb-14">
+                <h3 class="type-ui text-lg mb-3">Guided Troubleshooting</h3>
+                <p class="type-body mb-6">Instead of hunting through logs, admins get a triaged ticket queue, a conversational assistant that finds the blocking rule, and a one-click path to resolution.</p>
+                <div class="carousel" data-carousel>
+                  <div class="carousel-slide is-active" data-caption="Every open issue triaged by priority, not buried across logs and tabs.">
+                    <img src="./media/work-01-01/troubleshoot-00-tickets.jpg" alt="Ticket Management Center listing prioritized open issues" />
+                  </div>
+                  <div class="carousel-slide" data-caption="Ask in plain language &mdash; the AI Assistant finds the blocking rule for you.">
+                    <img src="./media/work-01-01/troubleshoot-01-assistant.jpg" alt="AI Assistant identifying the rule blocking a user's access" />
+                  </div>
+                  <div class="carousel-slide" data-caption="Root cause surfaced, with a one-click path to Packet Tracer, Smart CLI, or a TAC ticket.">
+                    <img src="./media/work-01-01/troubleshoot-02-rootcause.jpg" alt="Traffic Troubleshooting view with root cause and suggestion to fix" />
+                  </div>
+                  <div class="carousel-slide" data-caption="Resolved &mdash; the rule is fixed and confirmed, closing the loop from alert to resolution.">
+                    <img src="./media/work-01-01/troubleshoot-03-resolved.jpg" alt="Rule updated and access successfully restored" />
+                  </div>
+                  <button type="button" class="carousel-btn carousel-btn-prev" aria-label="Previous slide">&larr;</button>
+                  <button type="button" class="carousel-btn carousel-btn-next" aria-label="Next slide">&rarr;</button>
+                  <div class="carousel-counter"><span class="carousel-counter-current">1</span>/4</div>
+                </div>
+                <div class="carousel-dots" data-carousel-dots>
+                  <button type="button" class="carousel-dot is-active" aria-label="Slide 1"></button>
+                  <button type="button" class="carousel-dot" aria-label="Slide 2"></button>
+                  <button type="button" class="carousel-dot" aria-label="Slide 3"></button>
+                  <button type="button" class="carousel-dot" aria-label="Slide 4"></button>
+                </div>
+                <p class="carousel-caption" data-carousel-caption>
+                  Every open issue triaged by priority, not buried across logs and tabs.
+                </p>
+              </div>
+
+              <div class="mb-4">
                 <h3 class="type-ui text-lg mb-3">Actionable Dashboard</h3>
                 <p class="type-body mb-6">The new dashboard provides end-to-end visibility and instant clarity. It gives a bird's-eye view of device health and security posture while allowing admins to delve into detailed, comprehensive troubleshooting information.</p>
-                <div class="rounded-2xl border border-border overflow-hidden bg-surface aspect-[16/9] relative">
-                  <img src="./media/work-01-01/actionable-dashboard.png" alt="Actionable Dashboard overview" class="object-cover absolute inset-0 size-full" />
+                <div class="carousel" data-carousel>
+                  <div class="carousel-slide is-active" data-caption="Day 20: device health, feature adoption, and threats blocked in one bird's-eye view.">
+                    <img src="./media/work-01-01/dashboard-01-day20.jpg" alt="Actionable Dashboard at Day 20: device health, feature adoption, threats blocked" />
+                  </div>
+                  <div class="carousel-slide" data-caption="One-click reporting &mdash; a full report generated and sent without leaving the dashboard.">
+                    <img src="./media/work-01-01/dashboard-00-report.jpg" alt="One-click report generated and sent from the dashboard" />
+                  </div>
+                  <div class="carousel-slide" data-caption="Day 50: the same view matures with the firewall, surfacing new criticals as posture evolves.">
+                    <img src="./media/work-01-01/dashboard-02-day50.jpg" alt="Actionable Dashboard at Day 50, evolving with the firewall's posture" />
+                  </div>
+                  <button type="button" class="carousel-btn carousel-btn-prev" aria-label="Previous slide">&larr;</button>
+                  <button type="button" class="carousel-btn carousel-btn-next" aria-label="Next slide">&rarr;</button>
+                  <div class="carousel-counter"><span class="carousel-counter-current">1</span>/3</div>
                 </div>
+                <div class="carousel-dots" data-carousel-dots>
+                  <button type="button" class="carousel-dot is-active" aria-label="Slide 1"></button>
+                  <button type="button" class="carousel-dot" aria-label="Slide 2"></button>
+                  <button type="button" class="carousel-dot" aria-label="Slide 3"></button>
+                </div>
+                <p class="carousel-caption" data-carousel-caption>
+                  Day 20: device health, feature adoption, and threats blocked in one bird's-eye view.
+                </p>
               </div>
             </section>
 
@@ -725,5 +887,48 @@ As the Design Lead and Sprint Lead on Cisco Secure Firewall, I connected directl
       </section>
     </main>
     <script src="./media/js/menu.js"></script>
+    <script>
+      (function () {
+        function initCarousels() {
+          document.querySelectorAll('[data-carousel]').forEach(function (root) {
+            var slides = root.querySelectorAll('.carousel-slide');
+            var dotsRoot = root.parentElement.querySelector('[data-carousel-dots]');
+            var dots = dotsRoot ? dotsRoot.querySelectorAll('.carousel-dot') : [];
+            var counter = root.querySelector('.carousel-counter-current');
+            var caption = root.parentElement.querySelector('[data-carousel-caption]');
+            var idx = 0;
+
+            function show(i) {
+              idx = (i + slides.length) % slides.length;
+              slides.forEach(function (s, j) {
+                s.classList.toggle('is-active', j === idx);
+              });
+              dots.forEach(function (d, j) {
+                d.classList.toggle('is-active', j === idx);
+              });
+              if (counter) counter.textContent = idx + 1;
+              if (caption && slides[idx].dataset.caption) {
+                caption.innerHTML = slides[idx].dataset.caption;
+              }
+            }
+
+            var prevBtn = root.querySelector('.carousel-btn-prev');
+            var nextBtn = root.querySelector('.carousel-btn-next');
+            if (prevBtn) prevBtn.addEventListener('click', function () { show(idx - 1); });
+            if (nextBtn) nextBtn.addEventListener('click', function () { show(idx + 1); });
+            dots.forEach(function (d, j) {
+              d.addEventListener('click', function () { show(j); });
+            });
+
+            show(0);
+          });
+        }
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', initCarousels);
+        } else {
+          initCarousels();
+        }
+      })();
+    </script>
   </body>
 </html>
