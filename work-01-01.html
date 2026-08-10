@@ -204,26 +204,30 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    width: 2.25rem;
-    height: 2.25rem;
-    border-radius: 9999px;
-    background: hsl(var(--background) / .85);
-    border: 1px solid hsl(var(--border));
+    width: 1.75rem;
+    height: 2.5rem;
+    background: transparent;
+    border: none;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    color: hsl(var(--foreground));
+    color: hsl(var(--muted-foreground));
     z-index: 5;
-    font-size: 1.1rem;
+    font-size: 1.5rem;
     line-height: 1;
     padding: 0;
+    transition: color .15s ease, transform .15s ease;
 }
 .carousel-btn:hover {
-    background: hsl(var(--surface));
+    color: hsl(var(--accent));
+    transform: translateY(-50%) translateX(-2px);
 }
-.carousel-btn-prev { left: -.9rem; }
-.carousel-btn-next { right: -.9rem; }
+.carousel-btn-next:hover {
+    transform: translateY(-50%) translateX(2px);
+}
+.carousel-btn-prev { left: -1.6rem; }
+.carousel-btn-next { right: -1.6rem; }
 .carousel-counter {
     position: absolute;
     top: -1.75rem;
