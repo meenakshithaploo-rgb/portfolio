@@ -82,6 +82,77 @@
         padding-left: 3rem;
     }
 }
+
+/* Discovery Process infographic panel */
+.discovery-panel {
+    border: 1px solid hsl(var(--border));
+    border-radius: 1rem;
+    background-color: hsl(var(--surface));
+    overflow: hidden;
+}
+.discovery-row {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+.discovery-row > * {
+    border-top: 1px solid hsl(var(--border));
+    padding: 1.5rem;
+}
+.discovery-row > *:first-child {
+    border-top: none;
+}
+.discovery-row-bottom {
+    border-top: 1px solid hsl(var(--border));
+}
+.discovery-connectors {
+    display: none;
+    align-items: center;
+    margin-bottom: 0.75rem;
+}
+.discovery-connectors .label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: hsl(var(--foreground));
+    white-space: nowrap;
+}
+.discovery-connectors .dots {
+    flex: 1 1 auto;
+    height: 0;
+    margin: 0 0.5rem;
+    border-top: 1px dotted hsl(var(--foreground) / 0.35);
+}
+.discovery-stage-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: hsl(var(--foreground));
+    margin-bottom: 0.5rem;
+}
+@media (min-width: 768px) {
+    .discovery-row {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .discovery-row > * {
+        border-top: none;
+        border-left: 1px solid hsl(var(--border));
+        padding: 1.75rem;
+    }
+    .discovery-row > *:first-child {
+        border-left: none;
+    }
+    .discovery-row-bottom {
+        grid-template-columns: 3fr 2fr;
+    }
+    .discovery-connectors {
+        display: flex;
+    }
+    .discovery-stage-label {
+        display: none;
+    }
+}
 </style>
 </head>
   <body class="min-h-screen bg-background text-foreground">
@@ -332,82 +403,92 @@
                 This customer conversation ignited a six-week design sprint (code-named GOAT) with a 20-member cross-functional team spanning PM, Engineering, Research, Design, and Content &mdash; run as a 3-day hybrid workshop across geographies, plus two additional weeks to finalize the presentation and design assets for the executive readout.
               </p>
 
-              <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
-                <div class="rounded-2xl border border-border bg-surface p-6">
-                  <div class="text-4xl font-display font-bold text-accent mb-2">14</div>
-                  <h3 class="type-ui text-base font-semibold text-foreground mb-2">Interviews with Stakeholders</h3>
-                  <p class="type-body-sm text-muted-foreground">The discovery phase concluded with a treasure trove of insights gathered from 14 interviews with stakeholders across executive leadership, Engineering, PM, CX, and escalations.</p>
+              <div class="discovery-panel mb-8">
+                <div class="discovery-row">
+                  <div>
+                    <div class="text-4xl font-display font-bold text-accent mb-2">14</div>
+                    <h3 class="type-ui text-base font-semibold text-foreground mb-2">Interviews with Stakeholders</h3>
+                    <p class="type-body-sm text-muted-foreground">The discovery phase concluded with a treasure trove of insights gathered from 14 interviews with stakeholders across executive leadership, Engineering, PM, CX, and escalations.</p>
+                  </div>
+                  <div>
+                    <div class="text-4xl font-display font-bold text-accent mb-2">04</div>
+                    <h3 class="type-ui text-base font-semibold text-foreground mb-2">NPS Customer Recordings</h3>
+                    <p class="type-body-sm text-muted-foreground">Insights were further powered by 4 NPS customer recordings and TAC tickets from customers across several industries.</p>
+                  </div>
+                  <div>
+                    <div class="text-4xl font-display font-bold text-accent mb-2">116</div>
+                    <h3 class="type-ui text-base font-semibold text-foreground mb-2">Customers in Detractors Category</h3>
+                    <p class="type-body-sm text-muted-foreground">The team also worked through NPS comments from 116 detractor-category customers, adding them to the clustering data alongside a mini meta-analysis from research.</p>
+                  </div>
                 </div>
-                <div class="rounded-2xl border border-border bg-surface p-6">
-                  <div class="text-4xl font-display font-bold text-accent mb-2">04</div>
-                  <h3 class="type-ui text-base font-semibold text-foreground mb-2">NPS Customer Recordings</h3>
-                  <p class="type-body-sm text-muted-foreground">Insights were further powered by 4 NPS customer recordings and TAC tickets from customers across several industries.</p>
-                </div>
-                <div class="rounded-2xl border border-border bg-surface p-6">
-                  <div class="text-4xl font-display font-bold text-accent mb-2">116</div>
-                  <h3 class="type-ui text-base font-semibold text-foreground mb-2">Customers in Detractors Category</h3>
-                  <p class="type-body-sm text-muted-foreground">The team also worked through NPS comments from 116 detractor-category customers, adding them to the clustering data alongside a mini meta-analysis from research.</p>
-                </div>
-              </div>
 
-              <div class="flex flex-col md:flex-row gap-8 rounded-2xl border border-border bg-surface p-6 md:p-8 mb-8">
-                <div class="flex-[3]">
-                  <div class="flex items-baseline gap-3 mb-5">
-                    <div class="text-4xl font-display font-bold text-accent">06</div>
-                    <h3 class="type-ui text-base font-semibold text-foreground">Week Design Sprint</h3>
+                <div class="discovery-row discovery-row-bottom">
+                  <div>
+                    <div class="flex items-baseline gap-3 mb-5">
+                      <div class="text-4xl font-display font-bold text-accent">06</div>
+                      <h3 class="type-ui text-base font-semibold text-foreground">Week Design Sprint</h3>
+                    </div>
+
+                    <div class="discovery-connectors">
+                      <span class="label">Discover</span><span class="dots"></span>
+                      <span class="label">Define</span><span class="dots"></span>
+                      <span class="label">Design</span><span class="dots"></span>
+                      <span class="label">Story Visualization</span><span class="dots"></span>
+                      <span class="label">Readout</span>
+                    </div>
+
+                    <div class="grid grid-cols-2 sm:grid-cols-5 gap-4">
+                      <div>
+                        <div class="discovery-stage-label">Discover</div>
+                        <ul class="type-body-sm text-muted-foreground space-y-1">
+                          <li>Plan stakeholder interviews</li>
+                          <li>Define outcome</li>
+                          <li>Identify Nik, Kit &amp; Alex's outcomes</li>
+                        </ul>
+                      </div>
+                      <div>
+                        <div class="discovery-stage-label">Define</div>
+                        <ul class="type-body-sm text-muted-foreground space-y-1">
+                          <li>Prioritize personas</li>
+                          <li>Desired product outcomes</li>
+                          <li>Collect existing customer evidence</li>
+                        </ul>
+                      </div>
+                      <div>
+                        <div class="discovery-stage-label">Design</div>
+                        <ul class="type-body-sm text-muted-foreground space-y-1">
+                          <li>Draft the presentation narrative</li>
+                          <li>Compose a north-star prototype</li>
+                        </ul>
+                      </div>
+                      <div>
+                        <div class="discovery-stage-label">Story Visualization</div>
+                        <ul class="type-body-sm text-muted-foreground space-y-1">
+                          <li>Finalize the narrative</li>
+                          <li>Finish north-star prototype(s)</li>
+                        </ul>
+                      </div>
+                      <div>
+                        <div class="discovery-stage-label">Readout</div>
+                        <ul class="type-body-sm text-muted-foreground space-y-1">
+                          <li>Finalize the pitch deck</li>
+                          <li>Compile design artefacts</li>
+                          <li>Prototype readiness</li>
+                          <li>Presentation</li>
+                        </ul>
+                      </div>
+                    </div>
                   </div>
-                  <div class="grid grid-cols-2 sm:grid-cols-5 gap-4">
-                    <div>
-                      <div class="text-[11px] font-semibold tracking-wide text-foreground uppercase mb-2 pb-2 border-b border-border">Discover</div>
-                      <ul class="type-body-sm text-muted-foreground space-y-1">
-                        <li>Plan stakeholder interviews</li>
-                        <li>Define outcome</li>
-                        <li>Identify Nik, Kit &amp; Alex's outcomes</li>
-                      </ul>
+                  <div>
+                    <div class="flex items-baseline gap-3 mb-5">
+                      <div class="text-4xl font-display font-bold text-accent">20</div>
+                      <h3 class="type-ui text-base font-semibold text-foreground">Team Members</h3>
                     </div>
-                    <div>
-                      <div class="text-[11px] font-semibold tracking-wide text-foreground uppercase mb-2 pb-2 border-b border-border">Define</div>
-                      <ul class="type-body-sm text-muted-foreground space-y-1">
-                        <li>Prioritize personas</li>
-                        <li>Desired product outcomes</li>
-                        <li>Collect existing customer evidence</li>
-                      </ul>
-                    </div>
-                    <div>
-                      <div class="text-[11px] font-semibold tracking-wide text-foreground uppercase mb-2 pb-2 border-b border-border">Design</div>
-                      <ul class="type-body-sm text-muted-foreground space-y-1">
-                        <li>Draft the presentation narrative</li>
-                        <li>Compose a north-star prototype</li>
-                      </ul>
-                    </div>
-                    <div>
-                      <div class="text-[11px] font-semibold tracking-wide text-foreground uppercase mb-2 pb-2 border-b border-border">Story Visualization</div>
-                      <ul class="type-body-sm text-muted-foreground space-y-1">
-                        <li>Finalize the narrative</li>
-                        <li>Finish north-star prototype(s)</li>
-                      </ul>
-                    </div>
-                    <div>
-                      <div class="text-[11px] font-semibold tracking-wide text-foreground uppercase mb-2 pb-2 border-b border-border">Readout</div>
-                      <ul class="type-body-sm text-muted-foreground space-y-1">
-                        <li>Finalize the pitch deck</li>
-                        <li>Compile design artefacts</li>
-                        <li>Prototype readiness</li>
-                        <li>Presentation</li>
-                      </ul>
-                    </div>
+                    <p class="type-body-sm font-medium text-foreground mb-2">Working Group</p>
+                    <p class="type-body-sm text-muted-foreground mb-4">A diverse team of Product Managers, Researchers, Product Designers, Engineers, and Content Designers.</p>
+                    <p class="type-body-sm text-muted-foreground mb-1">3 days of hybrid workshop across geographies.</p>
+                    <p class="type-body-sm text-muted-foreground">Leveraging collective experience to achieve <span class="font-semibold text-foreground">one outcome</span>.</p>
                   </div>
-                </div>
-                <div class="hidden md:block w-px bg-border shrink-0"></div>
-                <div class="flex-[2]">
-                  <div class="flex items-baseline gap-3 mb-5">
-                    <div class="text-4xl font-display font-bold text-accent">20</div>
-                    <h3 class="type-ui text-base font-semibold text-foreground">Team Members</h3>
-                  </div>
-                  <p class="type-body-sm font-medium text-foreground mb-2">Working Group</p>
-                  <p class="type-body-sm text-muted-foreground mb-4">A diverse team of Product Managers, Researchers, Product Designers, Engineers, and Content Designers.</p>
-                  <p class="type-body-sm text-muted-foreground mb-1">3 days of hybrid workshop across geographies.</p>
-                  <p class="type-body-sm text-muted-foreground">Leveraging collective experience to achieve <span class="font-semibold text-foreground">one outcome</span>.</p>
                 </div>
               </div>
 
