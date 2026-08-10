@@ -173,11 +173,15 @@
 /* Results carousel */
 .carousel {
     position: relative;
+    margin-top: 2rem;
+}
+.carousel-frame {
     border-radius: 1rem;
     overflow: hidden;
     border: 1px solid hsl(var(--border));
     background-color: hsl(var(--surface));
     aspect-ratio: 2000 / 1066;
+    position: relative;
 }
 .carousel-slide {
     position: absolute;
@@ -218,20 +222,17 @@
 .carousel-btn:hover {
     background: hsl(var(--surface));
 }
-.carousel-btn-prev { left: .75rem; }
-.carousel-btn-next { right: .75rem; }
+.carousel-btn-prev { left: -.9rem; }
+.carousel-btn-next { right: -.9rem; }
 .carousel-counter {
     position: absolute;
-    top: .75rem;
-    right: .75rem;
+    top: -1.75rem;
+    right: 0;
     z-index: 5;
-    background: hsl(var(--background) / .85);
-    border: 1px solid hsl(var(--border));
-    color: hsl(var(--foreground));
+    color: hsl(var(--muted-foreground));
     font-size: 11px;
     font-weight: 600;
-    padding: .2rem .55rem;
-    border-radius: 9999px;
+    letter-spacing: .03em;
 }
 .carousel-dots {
     display: flex;
@@ -426,7 +427,7 @@
                 </div>
                 <div class="work-project-text-wrapper">
                   <div class="flex items-center gap-3 type-metadata">
-                    <span>2024</span>
+                    <span>2024&ndash;2025</span>
                     <span aria-hidden="true" class="text-foreground/30">·</span>
                     <span>Cisco</span>
                   </div>
@@ -772,17 +773,19 @@ As the Design Lead and Sprint Lead on Cisco Secure Firewall, I connected directl
                 <h3 class="type-ui text-lg mb-3">Simplifying Day 0 Experience</h3>
                 <p class="type-body mb-6">We introduced a guided, step-by-step out-of-the-box experience to help admins confidently set up typical policies and get their firewall running quickly.</p>
                 <div class="carousel" data-carousel>
-                  <div class="carousel-slide is-active" data-caption="Update and install &mdash; the guided flow starts before the admin ever sees an empty console.">
-                    <img src="./media/work-01-01/day0-00-install.jpg" alt="Firewall Manager update and install progress screen" />
-                  </div>
-                  <div class="carousel-slide" data-caption="Get Your Device Up and Running &mdash; configure networking, then onboard devices: two clear steps instead of a blank console.">
-                    <img src="./media/work-01-01/day0-01-setup.jpg" alt="Get Your Device Up and Running: configure networking, then onboard devices" />
-                  </div>
-                  <div class="carousel-slide" data-caption="Device Management &mdash; onboarding status is visible and actionable from the first screen.">
-                    <img src="./media/work-01-01/day0-03-devices.jpg" alt="Device Management view showing onboarding status" />
-                  </div>
-                  <div class="carousel-slide" data-caption="Firewall Enhancement Checklist &mdash; guided next steps replace guesswork on what to configure next.">
-                    <img src="./media/work-01-01/day0-02-checklist.jpg" alt="Firewall Enhancement Checklist guiding next configuration steps" />
+                  <div class="carousel-frame">
+                    <div class="carousel-slide is-active" data-caption="Update and install &mdash; the guided flow starts before the admin ever sees an empty console.">
+                      <img src="./media/work-01-01/day0-00-install.jpg" alt="Firewall Manager update and install progress screen" />
+                    </div>
+                    <div class="carousel-slide" data-caption="Get Your Device Up and Running &mdash; configure networking, then onboard devices: two clear steps instead of a blank console.">
+                      <img src="./media/work-01-01/day0-01-setup.jpg" alt="Get Your Device Up and Running: configure networking, then onboard devices" />
+                    </div>
+                    <div class="carousel-slide" data-caption="Device Management &mdash; onboarding status is visible and actionable from the first screen.">
+                      <img src="./media/work-01-01/day0-03-devices.jpg" alt="Device Management view showing onboarding status" />
+                    </div>
+                    <div class="carousel-slide" data-caption="Firewall Enhancement Checklist &mdash; guided next steps replace guesswork on what to configure next.">
+                      <img src="./media/work-01-01/day0-02-checklist.jpg" alt="Firewall Enhancement Checklist guiding next configuration steps" />
+                    </div>
                   </div>
                   <button type="button" class="carousel-btn carousel-btn-prev" aria-label="Previous slide">&larr;</button>
                   <button type="button" class="carousel-btn carousel-btn-next" aria-label="Next slide">&rarr;</button>
@@ -803,17 +806,19 @@ As the Design Lead and Sprint Lead on Cisco Secure Firewall, I connected directl
                 <h3 class="type-ui text-lg mb-3">Guided Troubleshooting</h3>
                 <p class="type-body mb-6">Instead of hunting through logs, admins get a triaged ticket queue, a conversational assistant that finds the blocking rule, and a one-click path to resolution.</p>
                 <div class="carousel" data-carousel>
-                  <div class="carousel-slide is-active" data-caption="Every open issue triaged by priority, not buried across logs and tabs.">
-                    <img src="./media/work-01-01/troubleshoot-00-tickets.jpg" alt="Ticket Management Center listing prioritized open issues" />
-                  </div>
-                  <div class="carousel-slide" data-caption="Ask in plain language &mdash; the AI Assistant finds the blocking rule for you.">
-                    <img src="./media/work-01-01/troubleshoot-01-assistant.jpg" alt="AI Assistant identifying the rule blocking a user's access" />
-                  </div>
-                  <div class="carousel-slide" data-caption="Root cause surfaced, with a one-click path to Packet Tracer, Smart CLI, or a TAC ticket.">
-                    <img src="./media/work-01-01/troubleshoot-02-rootcause.jpg" alt="Traffic Troubleshooting view with root cause and suggestion to fix" />
-                  </div>
-                  <div class="carousel-slide" data-caption="Resolved &mdash; the rule is fixed and confirmed, closing the loop from alert to resolution.">
-                    <img src="./media/work-01-01/troubleshoot-03-resolved.jpg" alt="Rule updated and access successfully restored" />
+                  <div class="carousel-frame">
+                    <div class="carousel-slide is-active" data-caption="Every open issue triaged by priority, not buried across logs and tabs.">
+                      <img src="./media/work-01-01/troubleshoot-00-tickets.jpg" alt="Ticket Management Center listing prioritized open issues" />
+                    </div>
+                    <div class="carousel-slide" data-caption="Ask in plain language &mdash; the AI Assistant finds the blocking rule for you.">
+                      <img src="./media/work-01-01/troubleshoot-01-assistant.jpg" alt="AI Assistant identifying the rule blocking a user's access" />
+                    </div>
+                    <div class="carousel-slide" data-caption="Root cause surfaced, with a one-click path to Packet Tracer, Smart CLI, or a TAC ticket.">
+                      <img src="./media/work-01-01/troubleshoot-02-rootcause.jpg" alt="Traffic Troubleshooting view with root cause and suggestion to fix" />
+                    </div>
+                    <div class="carousel-slide" data-caption="Resolved &mdash; the rule is fixed and confirmed, closing the loop from alert to resolution.">
+                      <img src="./media/work-01-01/troubleshoot-03-resolved.jpg" alt="Rule updated and access successfully restored" />
+                    </div>
                   </div>
                   <button type="button" class="carousel-btn carousel-btn-prev" aria-label="Previous slide">&larr;</button>
                   <button type="button" class="carousel-btn carousel-btn-next" aria-label="Next slide">&rarr;</button>
@@ -834,14 +839,16 @@ As the Design Lead and Sprint Lead on Cisco Secure Firewall, I connected directl
                 <h3 class="type-ui text-lg mb-3">Actionable Dashboard</h3>
                 <p class="type-body mb-6">The new dashboard provides end-to-end visibility and instant clarity. It gives a bird's-eye view of device health and security posture while allowing admins to delve into detailed, comprehensive troubleshooting information.</p>
                 <div class="carousel" data-carousel>
-                  <div class="carousel-slide is-active" data-caption="Day 20: device health, feature adoption, and threats blocked in one bird's-eye view.">
-                    <img src="./media/work-01-01/dashboard-01-day20.jpg" alt="Actionable Dashboard at Day 20: device health, feature adoption, threats blocked" />
-                  </div>
-                  <div class="carousel-slide" data-caption="One-click reporting &mdash; a full report generated and sent without leaving the dashboard.">
-                    <img src="./media/work-01-01/dashboard-00-report.jpg" alt="One-click report generated and sent from the dashboard" />
-                  </div>
-                  <div class="carousel-slide" data-caption="Day 50: the same view matures with the firewall, surfacing new criticals as posture evolves.">
-                    <img src="./media/work-01-01/dashboard-02-day50.jpg" alt="Actionable Dashboard at Day 50, evolving with the firewall's posture" />
+                  <div class="carousel-frame">
+                    <div class="carousel-slide is-active" data-caption="Day 20: device health, feature adoption, and threats blocked in one bird's-eye view.">
+                      <img src="./media/work-01-01/dashboard-01-day20.jpg" alt="Actionable Dashboard at Day 20: device health, feature adoption, threats blocked" />
+                    </div>
+                    <div class="carousel-slide" data-caption="One-click reporting &mdash; a full report generated and sent without leaving the dashboard.">
+                      <img src="./media/work-01-01/dashboard-00-report.jpg" alt="One-click report generated and sent from the dashboard" />
+                    </div>
+                    <div class="carousel-slide" data-caption="Day 50: the same view matures with the firewall, surfacing new criticals as posture evolves.">
+                      <img src="./media/work-01-01/dashboard-02-day50.jpg" alt="Actionable Dashboard at Day 50, evolving with the firewall's posture" />
+                    </div>
                   </div>
                   <button type="button" class="carousel-btn carousel-btn-prev" aria-label="Previous slide">&larr;</button>
                   <button type="button" class="carousel-btn carousel-btn-next" aria-label="Next slide">&rarr;</button>
