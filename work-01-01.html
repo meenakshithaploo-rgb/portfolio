@@ -131,7 +131,6 @@
    purged Tailwind bundle above never generated (the original build only
    emitted classes actually present in the source at build time). Values
    match Tailwind's default scale / this site's existing tokens. */
-.grid-cols-1 { grid-template-columns: repeat(1, minmax(0, 1fr)); }
 .mb-1 { margin-bottom: .25rem; }
 .mb-2 { margin-bottom: .5rem; }
 .mb-3 { margin-bottom: .75rem; }
@@ -258,6 +257,15 @@
     margin-top: .85rem;
     font-size: 1rem;
     color: hsl(var(--muted-foreground));
+}
+.quote-sm {
+    font-family: var(--font-serif), Georgia, serif;
+    font-size: 1.25rem;
+    line-height: 1.4;
+    letter-spacing: -.01em;
+    font-weight: 400;
+    font-style: italic;
+    color: hsl(var(--accent));
 }
 </style>
 </head>
@@ -474,7 +482,7 @@
 As the Design Lead and Sprint Lead on Cisco Secure Firewall, I connected directly with the customer. The real ask quickly surfaced: they didn't actually want the CLI back, they wanted what it used to give them &mdash; a fast, direct way to find and fix a problem. The core issue became obvious:
               </p>
               <blockquote class="border-l-2 border-accent pl-5 my-8 mt-8">
-                <p class="type-editorial-heading mb-2">"Troubleshooting from the GUI was like extracting a wisdom tooth."</p>
+                <p class="quote-sm mb-2">"Troubleshooting from the GUI was like extracting a wisdom tooth."</p>
                 <footer class="type-body-sm">— A Cooperative Account Customer</footer>
               </blockquote>
             </section>
@@ -608,23 +616,23 @@ As the Design Lead and Sprint Lead on Cisco Secure Firewall, I connected directl
 
             <section class="mt-16">
               <h2 class="type-section-heading mb-6">Key Decisions</h2>
-              <p class="type-body mb-8">Four calls that shaped how a six-week sprint turned into an 18-month, cross-org roadmap commitment.</p>
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8 mt-8">
-                <div class="rounded-2xl border border-border bg-surface p-6">
-                  <h3 class="type-ui text-lg mb-3">1. Compress discovery into weeks, not quarters</h3>
-                  <p class="type-body-sm text-muted-foreground">With customer urgency already real, we ran the full cycle &mdash; stakeholder interviews through a north-star prototype &mdash; inside six weeks, rather than a standard multi-quarter discovery process. Research and design synthesis ran in parallel, not in sequence, across the full 20-person team.</p>
+              <p class="type-body mb-6">Four calls that shaped how a six-week sprint turned into an 18-month, cross-org roadmap commitment.</p>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="rounded-2xl border border-border bg-surface p-5">
+                  <h3 class="type-ui text-sm font-semibold text-accent mb-2">01 &middot; Compress discovery</h3>
+                  <p class="type-body-sm text-muted-foreground">Weeks, not quarters. Research and design ran in parallel, not in sequence, across the full 20-person team.</p>
                 </div>
-                <div class="rounded-2xl border border-border bg-surface p-6">
-                  <h3 class="type-ui text-lg mb-3">2. Narrow to three personas, not the whole base</h3>
-                  <p class="type-body-sm text-muted-foreground">Six personas rely on Cisco Secure Firewall daily. Rather than solving for all six, we scoped the redesign around three &mdash; Nik, Kit, and Alex &mdash; the operators most exposed to the friction we'd identified, to keep the vision sharp enough to both pitch and build.</p>
+                <div class="rounded-2xl border border-border bg-surface p-5">
+                  <h3 class="type-ui text-sm font-semibold text-accent mb-2">02 &middot; Narrow to three personas</h3>
+                  <p class="type-body-sm text-muted-foreground">Six personas use the product daily. We scoped around three &mdash; Nik, Kit, Alex &mdash; to keep the vision sharp enough to pitch and build.</p>
                 </div>
-                <div class="rounded-2xl border border-border bg-surface p-6">
-                  <h3 class="type-ui text-lg mb-3">3. Sequence quick wins ahead of the full rebuild</h3>
-                  <p class="type-body-sm text-muted-foreground">Rather than pitching the complete re-architecture as one bet, the post-readout plan targeted quick wins first &mdash; running research validation and capacity planning in parallel with committing execution for the larger three-phase roadmap.</p>
+                <div class="rounded-2xl border border-border bg-surface p-5">
+                  <h3 class="type-ui text-sm font-semibold text-accent mb-2">03 &middot; Quick wins before the rebuild</h3>
+                  <p class="type-body-sm text-muted-foreground">Rather than one big re-architecture bet, we targeted quick wins first, in parallel with committing the larger three-phase roadmap.</p>
                 </div>
-                <div class="rounded-2xl border border-border bg-surface p-6">
-                  <h3 class="type-ui text-lg mb-3">4. Institutionalize the outcome beyond the readout</h3>
-                  <p class="type-body-sm text-muted-foreground">A single readout doesn't move an 18-month roadmap on its own. We recorded the Day 0, Dashboard, and Troubleshooting design solutions as standalone vidcasts, and the research insights as a separate vidcast, so design leaders, researchers, and senior ICs across the wider Firewall org could reference the work directly in later roadmap discussions.</p>
+                <div class="rounded-2xl border border-border bg-surface p-5">
+                  <h3 class="type-ui text-sm font-semibold text-accent mb-2">04 &middot; Institutionalize the outcome</h3>
+                  <p class="type-body-sm text-muted-foreground">We recorded the design work and research as standalone vidcasts, so the wider org could reference it long after the readout.</p>
                 </div>
               </div>
             </section>
@@ -640,7 +648,7 @@ As the Design Lead and Sprint Lead on Cisco Secure Firewall, I connected directl
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="size-6"><circle cx="12" cy="5" r="2.5"/><circle cx="5" cy="19" r="2.5"/><circle cx="19" cy="19" r="2.5"/><path d="M12 7.5v4M12 11.5 6.8 17M12 11.5l5.2 5.5"/></svg>
                   </div>
                   <h3 class="type-ui text-base font-semibold text-foreground">Nik</h3>
-                  <p class="type-body-sm text-muted-foreground mb-3">Network Administrator</p>
+                  <p class="type-body-sm text-muted-foreground mb-3">Network Engineer</p>
                   <span class="inline-block rounded-full bg-accent/10 px-2.5 py-0.5 text-[11px] tracking-tight text-accent">Prioritized</span>
                 </div>
                 <div class="rounded-2xl border-2 border-accent bg-surface p-5 text-center">
@@ -694,39 +702,41 @@ As the Design Lead and Sprint Lead on Cisco Secure Firewall, I connected directl
                 <li><strong>Actionable:</strong> Provide guidance to simplify and improve the overall management experience.</li>
               </ul>
               <p class="type-body mb-8">
-                We framed this through the lens of a user narrative&mdash;a story of "Alex," a network administrator facing daily hurdles. This narrative helped build empathy and align the team around a cohesive north star experience.
+                We framed this through the lens of a user narrative&mdash;a story of "Nik," a network engineer facing daily hurdles. This narrative helped build empathy and align the team around a cohesive north star experience.
               </p>
             </section>
 
             <section class="mt-16">
-              <h2 class="type-section-heading mb-6">Bringing Alex to Life</h2>
-              <p class="type-body mb-8">
-                A slide of rule tables doesn't move a room the way a story does. To align a 20-person cross-functional team &mdash; and the executives funding the next 18 months &mdash; around the same problem, one of our designers hand-drew Alex's day as a four-panel narrative built from a storyboard we wrote together. It wasn't decoration; it was how we amplified the user problem into something the whole org could feel and rally behind.
+              <h2 class="type-section-heading mb-6">Bringing Nik to Life</h2>
+              <p class="type-body mb-6">
+                A slide of rule tables doesn't move a room the way a story does. To align a 20-person cross-functional team &mdash; and the executives funding the next 18 months &mdash; around the same problem, one of our designers hand-drew Nik's day as a four-panel narrative built from a storyboard we wrote together. It wasn't decoration; it was how we amplified the user problem into something the whole org could feel and rally behind.
               </p>
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4">
-                <div>
-                  <div class="rounded-2xl border border-border overflow-hidden bg-surface aspect-[4/3] relative">
-                    <img src="./media/work-01-01/alex-01-intro.webp" alt="Alex, a network administrator, waves and introduces himself" class="object-contain absolute inset-0 size-full" />
+              <div class="rounded-2xl border border-border bg-surface p-4">
+                <div class="grid grid-cols-2 gap-3">
+                  <div>
+                    <div class="rounded-xl overflow-hidden bg-background aspect-[4/3] relative">
+                      <img src="./media/work-01-01/alex-01-intro.webp" alt="Nik, a network engineer, waves and introduces himself" class="object-contain absolute inset-0 size-full" />
+                    </div>
+                    <p class="text-xs leading-snug text-muted-foreground mt-2 italic">"Hey! My name is Nik, one of the many network engineers here at my organization, and this is my journey today."</p>
                   </div>
-                  <p class="type-body-sm text-muted-foreground mt-3 italic">"Hey! My name is Alex, one of the many network admins here at my organization, and this is my journey today."</p>
-                </div>
-                <div>
-                  <div class="rounded-2xl border border-border overflow-hidden bg-surface aspect-[4/3] relative">
-                    <img src="./media/work-01-01/alex-02-overwhelmed.jpg" alt="Alex overwhelmed at his desk, surrounded by paperwork" class="object-cover absolute inset-0 size-full" />
+                  <div>
+                    <div class="rounded-xl overflow-hidden bg-background aspect-[4/3] relative">
+                      <img src="./media/work-01-01/alex-02-overwhelmed.jpg" alt="Nik overwhelmed at his desk, surrounded by paperwork" class="object-cover absolute inset-0 size-full" />
+                    </div>
+                    <p class="text-xs leading-snug text-muted-foreground mt-2 italic">Nik has been tasked with setting up and managing his organization's firewall infrastructure on the newly acquired Cisco Secure Firewall. His team is capable, but new to the product.</p>
                   </div>
-                  <p class="type-body-sm text-muted-foreground mt-3 italic">Alex has been tasked with setting up and managing his organization's firewall infrastructure on the newly acquired Cisco Secure Firewall. His team is capable, but new to the product.</p>
-                </div>
-                <div>
-                  <div class="rounded-2xl border border-border overflow-hidden bg-surface aspect-[4/3] relative">
-                    <img src="./media/work-01-01/alex-03-journey.jpg" alt="Alex studying a large, complex map representing his firewall estate" class="object-cover absolute inset-0 size-full" />
+                  <div>
+                    <div class="rounded-xl overflow-hidden bg-background aspect-[4/3] relative">
+                      <img src="./media/work-01-01/alex-03-journey.jpg" alt="Nik studying a large, complex map representing his firewall estate" class="object-cover absolute inset-0 size-full" />
+                    </div>
+                    <p class="text-xs leading-snug text-muted-foreground mt-2 italic">Nik's journey continues as he takes stock of the state of every system across his organization's firewall protection.</p>
                   </div>
-                  <p class="type-body-sm text-muted-foreground mt-3 italic">Alex's journey continues as he takes stock of the state of every system across his organization's firewall protection.</p>
-                </div>
-                <div>
-                  <div class="rounded-2xl border border-border overflow-hidden bg-surface aspect-[4/3] relative">
-                    <img src="./media/work-01-01/alex-04-triumph.jpg" alt="Alex standing confidently above the city skyline, task complete" class="object-cover absolute inset-0 size-full" />
+                  <div>
+                    <div class="rounded-xl overflow-hidden bg-background aspect-[4/3] relative">
+                      <img src="./media/work-01-01/alex-04-triumph.jpg" alt="Nik standing confidently above the city skyline, task complete" class="object-cover absolute inset-0 size-full" />
+                    </div>
+                    <p class="text-xs leading-snug text-muted-foreground mt-2 italic">Having journeyed through the thick and thin of managing his organization's firewall, Nik stands tall &mdash; proud and accomplished, thanks to a simplified Firewall Management experience.</p>
                   </div>
-                  <p class="type-body-sm text-muted-foreground mt-3 italic">Having journeyed through the thick and thin of managing his organization's firewall, Alex stands tall &mdash; proud and accomplished, thanks to a simplified Firewall Management experience.</p>
                 </div>
               </div>
             </section>
