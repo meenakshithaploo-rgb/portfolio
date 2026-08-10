@@ -5,7 +5,10 @@
       "Bash(git add *)",
       "Bash(git commit *)",
       "Bash(pip3 install *)",
-      "Bash(python3 -c ' *)"
+      "Bash(python3 -c ' *)",
+      "Bash(mkdir -p alex_illustrations)",
+      "Bash(python3 -c \"from PIL import Image; print\\('ok'\\)\")",
+      "Bash(SRC=\"/private/tmp/claude-501/-Users-meenakshithaploo-Documents-Meenakshi-Portfolio--Meenakshi/e724f948-af39-457c-9c7f-06f4c17f3614/scratchpad/alex_illustrations\" *)"
     ]
   }
 }
