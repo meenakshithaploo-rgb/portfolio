@@ -3,3 +3,6 @@
 
 # Claude Code local settings (machine-specific, not part of the site)
 .claude/
+
+# Working reference material (notes, images, docs) - not part of the published site
+_Ref/
