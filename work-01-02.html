@@ -248,6 +248,18 @@
 @media (max-width: 640px) {
     .mvp-groundwork-arrow { display: none; }
 }
+
+/* Quote styling, matched to work-01-01.html so pull-quotes read the same
+   size across both case studies. */
+.quote-sm {
+    font-family: var(--font-serif), Georgia, serif;
+    font-size: 1.25rem;
+    line-height: 1.4;
+    letter-spacing: -.01em;
+    font-weight: 400;
+    font-style: italic;
+    color: hsl(var(--accent));
+}
 </style>
 </head>
   <body class="min-h-screen bg-background text-foreground">
@@ -407,7 +419,7 @@
                 </div>
                 <div class="work-project-text-wrapper">
                   <div class="flex items-center gap-3 type-metadata">
-                    <span>2024</span>
+                    <span>2024 &ndash; 2026 (ongoing)</span>
                     <span aria-hidden="true" class="text-foreground/30">·</span>
                     <span>Cisco</span>
                   </div>
@@ -475,7 +487,7 @@
                 The mandate wasn't to extend an existing product line. It was to figure out, from nothing, what "defending AI" would even mean for an enterprise security company &mdash; while the technology itself was still changing month to month.
               </p>
               <blockquote class="border-l-2 border-accent pl-5 my-8 mt-8">
-                <p class="type-editorial-heading mb-2">"We don't have defense systems in place for this AI wave via our existing next-generation firewall landscape."</p>
+                <p class="quote-sm mb-2">"We don't have defense systems in place for this AI wave via our existing next-generation firewall landscape."</p>
                 <footer class="type-body-sm">— Working assessment, April 2024 (the signal that started the initiative)</footer>
               </blockquote>
             </section>
@@ -487,19 +499,19 @@
               <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8 mt-8">
                 <div class="rounded-2xl border border-border bg-surface p-6">
                   <h3 class="type-ui text-lg mb-3">1. Stay hands-on, not because I had to, but because the bet demanded it</h3>
-                  <p class="type-body-sm text-muted-foreground">I was already leading design across the wider org when this started, but with a team of two &mdash; myself and a senior designer I pulled in from my team &mdash; I worked as the lead designer myself: in Figma, in critique, shaping every early screen. A two-person team didn't need a manager yet. It needed a maker.</p>
+                  <p class="type-body-sm text-muted-foreground">With a team of two, I was the lead designer myself &mdash; in Figma, in critique, on every screen. A maker, not a manager, yet.</p>
                 </div>
                 <div class="rounded-2xl border border-border bg-surface p-6">
                   <h3 class="type-ui text-lg mb-3">2. Skip discovery, lean on standing signal</h3>
-                  <p class="type-body-sm text-muted-foreground">With executive urgency real and no time for formal research, we substituted Customer Advisory Board conversations, TAC patterns, and telemetry for a discovery phase.</p>
+                  <p class="type-body-sm text-muted-foreground">With no time for formal research, we substituted Customer Advisory Board input, TAC patterns, and telemetry for discovery.</p>
                 </div>
                 <div class="rounded-2xl border border-border bg-surface p-6">
                   <h3 class="type-ui text-lg mb-3">3. Let alpha feedback overrule the roadmap</h3>
-                  <p class="type-body-sm text-muted-foreground">When early feedback made clear that access management alone wasn't the product, we pivoted to re-scope around model and application validation instead of defending the original plan.</p>
+                  <p class="type-body-sm text-muted-foreground">When alpha feedback showed access management alone wasn't the product, we re-scoped around model and application validation.</p>
                 </div>
                 <div class="rounded-2xl border border-border bg-surface p-6">
-                  <h3 class="type-ui text-lg mb-3">4. Extend the design system, don't replace it</h3>
-                  <p class="type-body-sm text-muted-foreground">Rather than building a new component library, we built on One Cisco and spent new design effort only on what it didn't yet have: agentic interaction patterns.</p>
+                  <h3 class="type-ui text-lg mb-3">4. Extend the design system where it falls short</h3>
+                  <p class="type-body-sm text-muted-foreground">Rather than build a new component library, we extended One Cisco &mdash; spending new effort only on agentic interaction patterns.</p>
                 </div>
               </div>
             </section>
