@@ -98,6 +98,166 @@
 @media (min-width: 768px) {
     .md\:grid-cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 }
+
+/* Results carousel — copied verbatim from work-01-01.html so both case
+   studies share the same carousel look, spacing, and behavior. */
+.carousel {
+    position: relative;
+    margin-top: 2rem;
+}
+.carousel-frame {
+    border-radius: 1rem;
+    overflow: hidden;
+    border: 1px solid hsl(var(--border));
+    background-color: hsl(var(--surface));
+    aspect-ratio: 2000 / 1066;
+    position: relative;
+}
+.carousel-slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .3s ease;
+}
+.carousel-slide.is-active {
+    opacity: 1;
+    visibility: visible;
+}
+.carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1.75rem;
+    height: 2.5rem;
+    background: transparent;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: hsl(var(--muted-foreground));
+    z-index: 5;
+    font-size: 1.5rem;
+    line-height: 1;
+    padding: 0;
+    transition: color .15s ease, transform .15s ease;
+}
+.carousel-btn:hover {
+    color: hsl(var(--accent));
+    transform: translateY(-50%) translateX(-2px);
+}
+.carousel-btn-next:hover {
+    transform: translateY(-50%) translateX(2px);
+}
+.carousel-btn-prev { left: -1.6rem; }
+.carousel-btn-next { right: -1.6rem; }
+.carousel-counter {
+    position: absolute;
+    top: -1.75rem;
+    right: 0;
+    z-index: 5;
+    color: hsl(var(--muted-foreground));
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: .03em;
+}
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: .4rem;
+    margin-top: .85rem;
+}
+.carousel-dot {
+    width: .4rem;
+    height: .4rem;
+    border-radius: 9999px;
+    background: hsl(var(--border));
+    cursor: pointer;
+    border: none;
+    padding: 0;
+    transition: width .2s ease, background .2s ease;
+}
+.carousel-dot.is-active {
+    background: hsl(var(--accent));
+    width: 1.1rem;
+}
+.carousel-caption {
+    margin-top: .85rem;
+    font-size: 1rem;
+    color: hsl(var(--muted-foreground));
+}
+
+/* MVP design groundwork — a single, non-wrapping horizontal row telling
+   the exploration-to-MVP story in images instead of paragraphs. */
+.mvp-groundwork-row {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    gap: 1.25rem;
+    overflow-x: auto;
+    padding-bottom: .25rem;
+}
+.mvp-groundwork-item {
+    flex: 1 1 0;
+    min-width: 220px;
+}
+.mvp-groundwork-frame {
+    border-radius: 1rem;
+    overflow: hidden;
+    border: 1px solid hsl(var(--border));
+    background-color: hsl(var(--surface));
+    aspect-ratio: 4 / 3;
+    position: relative;
+}
+.mvp-groundwork-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+.mvp-groundwork-frame--endpoint {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: hsl(var(--accent) / 0.06);
+    border-style: dashed;
+}
+.mvp-groundwork-frame--endpoint span {
+    font-size: 1.75rem;
+    color: hsl(var(--accent));
+}
+.mvp-groundwork-label {
+    margin-top: .75rem;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: .05em;
+    text-transform: uppercase;
+    color: hsl(var(--accent));
+}
+.mvp-groundwork-caption {
+    margin-top: .25rem;
+    font-size: .875rem;
+    color: hsl(var(--muted-foreground));
+}
+.mvp-groundwork-arrow {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 3.25rem;
+    color: hsl(var(--muted-foreground));
+    font-size: 1.1rem;
+}
+@media (max-width: 640px) {
+    .mvp-groundwork-arrow { display: none; }
+}
 </style>
 </head>
   <body class="min-h-screen bg-background text-foreground">
@@ -355,13 +515,64 @@
             </section>
 
             <section class="mt-16">
-              <h2 class="type-section-heading mb-6">Design Leadership: MVP</h2>
-              <p class="type-body mb-6">
-                For the Alpha release, we had limited capabilities with the native user experience. We focused on getting a Minimum Viable Product to test with users immediately.
+              <h2 class="type-section-heading mb-6">Designing MVP</h2>
+              <p class="type-body mb-4">
+                The MVP was built the way a startup builds: lean, and in one room. Design, Product Management, and Engineering formed the founding triad &mdash; roughly ten people, working daily as a single product-building team, not a queue of handoffs.
               </p>
-              <div class="rounded-2xl border border-border overflow-hidden bg-surface aspect-[16/9] relative mb-12">
-                <img src="./media/work-01-02/mvp-alpha-release.png" alt="Alpha MVP Dashboard" class="object-cover absolute inset-0 size-full" />
+              <p class="type-body mb-12">
+                Together, we defined requirements, explored design directions, validated technical feasibility, and made product decisions as one group &mdash; iterating rapidly on whatever was both possible and valuable that week. Designing the MVP meant designing alongside Product and Engineering, not designing for them.
+              </p>
+
+              <div class="mvp-groundwork-row mb-12">
+                <div class="mvp-groundwork-item">
+                  <div class="mvp-groundwork-frame">
+                    <img src="./media/work-01-02/mvp-groundwork-exploration.png" alt="Mood board of dashboard variants pulled from ten existing Cisco products" />
+                  </div>
+                  <div class="mvp-groundwork-label">Exploration</div>
+                  <p class="mvp-groundwork-caption">A mood and component board built from 10 existing Cisco products, for design velocity.</p>
+                </div>
+                <div class="mvp-groundwork-arrow" aria-hidden="true">&rarr;</div>
+                <div class="mvp-groundwork-item">
+                  <div class="mvp-groundwork-frame">
+                    <img src="./media/work-01-02/mvp-groundwork-foundations.png" alt="Dark theme color token palette iterations" />
+                  </div>
+                  <div class="mvp-groundwork-label">Foundations</div>
+                  <p class="mvp-groundwork-caption">Dark-theme color tokens, co-defined with the Design System team as the dashboards evolved.</p>
+                </div>
+                <div class="mvp-groundwork-arrow" aria-hidden="true">&rarr;</div>
+                <div class="mvp-groundwork-item">
+                  <div class="mvp-groundwork-frame mvp-groundwork-frame--endpoint">
+                    <span aria-hidden="true">&#10003;</span>
+                  </div>
+                  <div class="mvp-groundwork-label">MVP</div>
+                  <p class="mvp-groundwork-caption">Converged into a working product &mdash; screens below.</p>
+                </div>
               </div>
+
+              <div class="carousel" data-carousel>
+                <div class="carousel-frame">
+                  <div class="carousel-slide is-active" data-caption="Full visibility &mdash; every asset, agent, application, and connection surfaced in one overview.">
+                    <img src="./media/work-01-02/mvp-screen-overview.png" alt="MVP overview dashboard showing AI assets, agents, applications, and data usage" />
+                  </div>
+                  <div class="carousel-slide" data-caption="Validation testing &mdash; models and applications run through algorithmic red-teaming.">
+                    <img src="./media/work-01-02/mvp-screen-validation-list.png" alt="MVP validation test list view" />
+                  </div>
+                  <div class="carousel-slide" data-caption="Test detail &mdash; attack techniques and block rates broken down per threat.">
+                    <img src="./media/work-01-02/mvp-screen-validation-detail.png" alt="MVP validation test detail view with threat breakdown" />
+                  </div>
+                </div>
+                <button type="button" class="carousel-btn carousel-btn-prev" aria-label="Previous slide">&larr;</button>
+                <button type="button" class="carousel-btn carousel-btn-next" aria-label="Next slide">&rarr;</button>
+                <div class="carousel-counter"><span class="carousel-counter-current">1</span>/3</div>
+              </div>
+              <div class="carousel-dots" data-carousel-dots>
+                <button type="button" class="carousel-dot is-active" aria-label="Slide 1"></button>
+                <button type="button" class="carousel-dot" aria-label="Slide 2"></button>
+                <button type="button" class="carousel-dot" aria-label="Slide 3"></button>
+              </div>
+              <p class="carousel-caption" data-carousel-caption>
+                Full visibility &mdash; every asset, agent, application, and connection surfaced in one overview.
+              </p>
             </section>
 
             <section class="mt-16">
@@ -489,5 +700,48 @@
       </section>
     </main>
     <script src="./media/js/menu.js"></script>
+    <script>
+      (function () {
+        function initCarousels() {
+          document.querySelectorAll('[data-carousel]').forEach(function (root) {
+            var slides = root.querySelectorAll('.carousel-slide');
+            var dotsRoot = root.parentElement.querySelector('[data-carousel-dots]');
+            var dots = dotsRoot ? dotsRoot.querySelectorAll('.carousel-dot') : [];
+            var counter = root.querySelector('.carousel-counter-current');
+            var caption = root.parentElement.querySelector('[data-carousel-caption]');
+            var idx = 0;
+
+            function show(i) {
+              idx = (i + slides.length) % slides.length;
+              slides.forEach(function (s, j) {
+                s.classList.toggle('is-active', j === idx);
+              });
+              dots.forEach(function (d, j) {
+                d.classList.toggle('is-active', j === idx);
+              });
+              if (counter) counter.textContent = idx + 1;
+              if (caption && slides[idx].dataset.caption) {
+                caption.innerHTML = slides[idx].dataset.caption;
+              }
+            }
+
+            var prevBtn = root.querySelector('.carousel-btn-prev');
+            var nextBtn = root.querySelector('.carousel-btn-next');
+            if (prevBtn) prevBtn.addEventListener('click', function () { show(idx - 1); });
+            if (nextBtn) nextBtn.addEventListener('click', function () { show(idx + 1); });
+            dots.forEach(function (d, j) {
+              d.addEventListener('click', function () { show(j); });
+            });
+
+            show(0);
+          });
+        }
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', initCarousels);
+        } else {
+          initCarousels();
+        }
+      })();
+    </script>
   </body>
 </html>
