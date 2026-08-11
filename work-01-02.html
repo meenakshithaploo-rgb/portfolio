@@ -197,19 +197,30 @@
 /* Taller variant — scoped to individual carousels (e.g. the standards-
    mapping carousel below) so it doesn't affect the default aspect ratio
    used by other carousels on this page, like the MVP one above. This
-   carousel's source images come in mixed aspect ratios (same width,
-   different heights), so it switches from cover to contain — the full
-   frame stays a fixed shape, but each image is scaled to fit inside it
-   whole, never cropped. The frame's fill color is sampled from the dark
-   UI screenshots themselves so any letterboxing blends in rather than
-   showing bare white space. */
+   carousel's source images share one width but come in mixed heights, so
+   the frame is sized to the most common (shortest-safe-margin) image and
+   every slide crops from the bottom only via object-fit: cover — full
+   native resolution, no upscaling, nothing trimmed off the top so the
+   nav/tab chrome stays aligned slide to slide. The frame's fill color is
+   sampled from the dark UI screenshots so any residual edge blends in. */
 .carousel--tall .carousel-frame {
-    aspect-ratio: 3 / 2;
+    aspect-ratio: 904 / 594;
     background-color: #0d0f12;
 }
 .carousel--tall .carousel-slide img {
+    object-fit: cover;
+    object-position: center top;
+}
+/* One slide (GA-AD-02, "Overview") is a taller, narrower-aspect screen
+   whose bottom half — the standards-mapping panel the caption calls out
+   — would be exactly what a bottom crop removes. It switches back to
+   contain instead, so the whole image shows at native resolution with a
+   small pillarboxed margin on the sides rather than losing that content.
+   (Selector matches the base rule's specificity so it wins on source
+   order — a plain `.carousel-slide--fit-contain img` would lose to
+   `.carousel--tall .carousel-slide img` above despite coming later.) */
+.carousel--tall .carousel-slide--fit-contain img {
     object-fit: contain;
-    object-position: center;
 }
 
 /* MVP design groundwork — a single, non-wrapping horizontal row telling
@@ -644,19 +655,19 @@
                 <div class="carousel carousel--tall" data-carousel>
                   <div class="carousel-frame">
                     <div class="carousel-slide is-active" data-caption="Drew, DevSecOps Architect &mdash; the ask: faster takeaways and standards-framework mapping, not raw attack percentages.">
-                      <img src="./media/work-01-02/customer-driven-design.png" alt="Customer feedback: biggest ask was quick takeaways and standards mapping" />
+                      <img src="./media/work-01-02/GA-AD-01.png" alt="Customer feedback: biggest ask was quick takeaways and standards mapping" />
                     </div>
-                    <div class="carousel-slide" data-caption="Shipped: technique scores and OWASP standards mapping surfaced at a glance.">
-                      <img src="./media/work-01-02/customer-standards-overview.png" alt="Validation overview with technique scores and OWASP standards mapping" />
+                    <div class="carousel-slide carousel-slide--fit-contain" data-caption="Shipped: technique scores and OWASP standards mapping surfaced at a glance.">
+                      <img src="./media/work-01-02/GA-AD-02.png" alt="Validation overview with technique scores and OWASP standards mapping" />
                     </div>
                     <div class="carousel-slide" data-caption="Mapped directly to MITRE ATLAS &mdash; attack success broken down by adversary tactic.">
-                      <img src="./media/work-01-02/customer-standards-mitre.png" alt="Validation standards view mapped to MITRE ATLAS" />
+                      <img src="./media/work-01-02/GA-AD-03.png" alt="Validation standards view mapped to MITRE ATLAS" />
                     </div>
                     <div class="carousel-slide" data-caption="Deep dive &mdash; technique-level detail without leaving the standards frame.">
-                      <img src="./media/work-01-02/customer-standards-deepdive.png" alt="Validation deep dive showing technique breakdown by percentage" />
+                      <img src="./media/work-01-02/GA-AD-04.png" alt="Validation deep dive showing technique breakdown by percentage" />
                     </div>
                     <div class="carousel-slide" data-caption="Drilling further &mdash; each technique traces down to the specific procedure and content type behind it.">
-                      <img src="./media/work-01-02/customer-standards-nodemap.png" alt="Validation deep dive node map tracing a technique down to procedure and content type" />
+                      <img src="./media/work-01-02/GA-AD-05.png" alt="Validation deep dive node map tracing a technique down to procedure and content type" />
                     </div>
                   </div>
                   <button type="button" class="carousel-btn carousel-btn-prev" aria-label="Previous slide">&larr;</button>
