@@ -196,12 +196,20 @@
 }
 /* Taller variant — scoped to individual carousels (e.g. the standards-
    mapping carousel below) so it doesn't affect the default aspect ratio
-   used by other carousels on this page, like the MVP one above. */
+   used by other carousels on this page, like the MVP one above. This
+   carousel's source images come in mixed aspect ratios (same width,
+   different heights), so it switches from cover to contain — the full
+   frame stays a fixed shape, but each image is scaled to fit inside it
+   whole, never cropped. The frame's fill color is sampled from the dark
+   UI screenshots themselves so any letterboxing blends in rather than
+   showing bare white space. */
 .carousel--tall .carousel-frame {
-    aspect-ratio: 4 / 3;
+    aspect-ratio: 3 / 2;
+    background-color: #0d0f12;
 }
 .carousel--tall .carousel-slide img {
-    object-position: left top;
+    object-fit: contain;
+    object-position: center;
 }
 
 /* MVP design groundwork — a single, non-wrapping horizontal row telling
